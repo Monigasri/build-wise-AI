@@ -37,7 +37,7 @@ const mainNav = [
 
 const secondaryNav = [
   { title: "Alerts", url: "/alerts", icon: Bell },
-  { title: "Documentation", url: "/docs", icon: FileText },
+  // { title: "Documentation", url: "/docs", icon: FileText },
 ];
 
 export function AppSidebar() {
