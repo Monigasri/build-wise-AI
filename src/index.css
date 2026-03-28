@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 29% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 29% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 15%;
+
+    --primary: 210 29% 24%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 210 18% 93%;
+    --secondary-foreground: 210 29% 24%;
+
+    --muted: 210 14% 95%;
+    --muted-foreground: 210 10% 46%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 210 29% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 152 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 29% 15%;
+
+    --border: 210 16% 89%;
+    --input: 210 16% 89%;
+    --ring: 210 29% 24%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 210 29% 18%;
+    --sidebar-foreground: 210 14% 82%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 210 29% 15%;
+    --sidebar-accent: 210 25% 24%;
+    --sidebar-accent-foreground: 210 14% 92%;
+    --sidebar-border: 210 20% 26%;
+    --sidebar-ring: 38 92% 50%;
+
+    --chart-1: 210 29% 24%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 152 60% 40%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 210 14% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  .kpi-card {
+    @apply bg-card rounded-xl p-6 shadow-sm border border-border/60 transition-shadow duration-200;
+  }
+  .kpi-card:hover {
+    box-shadow: 0 4px 24px 0 hsl(210 29% 24% / 0.07);
+  }
+  .page-header {
+    @apply text-2xl font-semibold tracking-tight text-foreground;
+  }
+  .page-subheader {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+  .section-card {
+    @apply bg-card rounded-xl border border-border/60 shadow-sm overflow-hidden;
+  }
+  .risk-high {
+    @apply text-destructive bg-destructive/10 border-destructive/20;
+  }
+  .risk-medium {
+    @apply text-warning bg-warning/10 border-warning/20;
+  }
+  .risk-low {
+    @apply text-success bg-success/10 border-success/20;
+  }
+}
